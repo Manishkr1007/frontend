@@ -17,7 +17,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/auth', { email, password,confirmPassword, name });
+       await axios.post('http://localhost:3000/auth', { email, password,confirmPassword, name });
       setSuccess('Registration successful. Please check your email for the OTP verification.');
       setError('');
     } catch (err) {

@@ -15,11 +15,10 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/auth/login', { email, password });
-      console.log(response.data);
+      console.log(response.data?.data?.token);
 
       // handle success response (redirect, token storage, etc.)
-      localStorage.setItem('token', response.data.token);
-
+      localStorage.setItem('token', response?.data?.data?.token);
       // router.push('https:localhost/auth/dashboard');
       console.log("Login Success");
       router.push('/dashboard');

@@ -3,6 +3,14 @@ import React from 'react';
 import Link from 'next/link';
 
 const NavBar: React.FC = () => {
+  // Logout function (replace with your actual logout logic)
+  const handleLogout = () => {
+    // Clear user session or token
+    console.log("User logged out");
+    // Redirect to login page or home
+    window.location.href = "/login"; // Change to your desired redirect path
+  };
+
   return (
     <nav className="bg-white shadow">
       <div className="container mx-auto flex justify-between items-center p-4">
@@ -16,6 +24,14 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link href="/about" className="text-gray-700 hover:text-teal-500">About Us</Link>
+          </li>
+          <li>
+            <button 
+              onClick={handleLogout} 
+              className="text-gray-700 hover:text-teal-500"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </div>
