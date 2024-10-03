@@ -14,6 +14,7 @@ export async function POST(request: Request) {
   }
 
   usersScores[username].push(score); // Save the score
+  console.log(usersScores);
 
   return NextResponse.json({ success: true });
 }
